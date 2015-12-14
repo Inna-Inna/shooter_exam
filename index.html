@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wild Gunman</title>
+    <link rel="stylesheet" href="src/styles/style.scss"/>
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div class="game-field-wrapper">
+    <div class="time-notify"><div id="time-text-user"><span class="time-text">TIME.YOU</span><span id="user-time"></span></div></div>
+    <hr/>
+    <div class="time-notify"><div id="time-text-gunman"><span class="time-text">GUNMAN</span><span id="gunman-time"></span></div></div>
+    <div id="game-field">
+        <div id="overlay-lose">
+            <div id="text" class=""></div>
+            <div id="gunman1" class=""></div>
+            <div id="overlay-win"></div>
+        </div>
+    </div>
+    <div id="score-table">
+        <div id="reward"><span>$ </span><span id="price"></span><br>REWARD</div>
+        <div id="level">Level: <span id="level-number"></span></div>
+        <div id="score-level"><span id="total-score"></span><br>SCORE</div>
+    </div>
+    <div id="overlay">
+        <div>
+            <button type="submit" id="start">START THE GAME</button>
+        </div>
+    </div>
+</div>
+
+
+
+<audio id="audio-intro" src="src/audio/intro.m4a" preload="auto" loop="loop"></audio>
+<audio id="audio-fire" src="src/audio/fire.m4a" preload="auto"></audio>
+<audio id="audio-shot" src="src/audio/shot.m4a" preload="auto"></audio>
+<audio id="audio-death" src="src/audio/death.m4a" preload="auto"></audio>
+<audio id="audio-win" src="src/audio/win.m4a" preload="auto"></audio>
+
+<script type="text/javascript" src="dist/scripts/shooter-bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+$color: #AFFACE;
+$image_dir: '../img/';
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+body{
+  background-color: $color;
+  font: normal 14px 'Audiowide';
+}
+
+
+
+.game-field-wrapper{
+  position: fixed;
+  width: 660px;
+  height: 550px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: #0be212;
+
+  hr{
+    margin: 0;
+  }
+
+  .time-notify{
+    border-top: solid transparent;
+    padding: 8px 10px;
+    display: block;
+
+    .time-text{
+      position: relative;
+      display: inline-block;
+      border: solid 2px #0be212;
+      border-radius: 5px;
+      padding:5px 20px;
+      font-size: 20px;
+      width: 100px;
+      margin-left: 250px;
+    }
+
+    #user-time, #gunman-time{
+      margin:auto;
+      padding-left: 30px;
+      font-size: 25px;
+    }
+  }
+
+  #overlay{
+    background: url( $image_dir + 'wild-gunman-red.png' ) center 50px no-repeat;
+    background-size: 70%;
+    visibility: visible;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+
+    #start{
+      position: relative;
+      background-color: #000000;
+      color: #ffffff;
+      font: normal 30px 'Audiowide';
+      border: none;
+      margin: 370px 50px;
+    }
+  }
+
+  #game-field{
+    position: relative;
+    background: url( $image_dir + 'bg.png' ) 100% 100% no-repeat;
+    background-size: cover;
+    height: 350px;
+    overflow: hidden;
+
+    #text{
+      position: fixed;
+      box-sizing: border-box;
+      display: none;
+      width:116px;
+      height: 66px;
+      background-image: url( $image_dir + 'status.png' );
+      color: black;
+      padding-top: 17px;
+      text-align: center;
+      margin-top:20px;
+      margin-left:280px;
+    }
+
+    #gunman1{
+      background: url( $image_dir + 'gunman-lg.png' );
+      position: relative;
+      display: none;
+      left: 320px;
+      top:100px;
+      width:84px;
+      height: 160px;
+    }
+
+    #overlay-win{
+      visibility: hidden;
+      background-color: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width:100%;
+      height:100%;
+      z-index: 1000;
+      opacity: 0;
+    }
+
+    .overlay-lose{
+      background-color: rgba(255,0,0,0.4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width:100%;
+      height:100%;
+      z-index: 1000;
+    }
+
+  }
+  #score-table{
+    margin: auto;
+
+    span{
+      color: #ffffff;
+    }
+
+    #level{
+      margin:auto;
+      display: inline-block;
+      font-size: 20px;
+      text-align: center;
+      padding: 5px 10px 0 170px;
+    }
+    #reward{
+      padding: 5px;
+      font-size: 30px;
+      float: right;
+      text-align: right;
+    }
+    #score-level{
+      padding: 5px;
+      font-size: 30px;
+      float: left;
+      text-align: left;
+    }
+  }
+}
+
+
+.walk{
+  animation:
+  shiftFeetSide 0.5s linear 0s 16 normal none,
+  shiftFeetFront 1s linear 6s 1 normal forwards,
+  slideOutLeft 6s linear 0s 1 normal forwards;
+
+}
+
+@-webkit-keyframes shiftFeetSide
+{
+  /* перемещаем фон спрайта три раза, на четвертый возвращаем обратно в 0 */
+  0%
+  {
+    background-position: -0px 0;
+  }
+  33.332%
+  {
+    background-position: -0px 0;
+  }
+  33.334%
+  {
+    background-position: -82px 0;
+  }
+  66.665%
+  {
+    background-position: -82px 0;
+  }
+  66.667%
+  {
+    background-position: -164px 0;
+  }
+  99.999%
+  {
+    background-position: -164px 0;
+  }
+  100%
+  {
+    background-position: -165px 0;
+  }
+}
+
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translate(320px, 0);
+    transform: translate(320px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate(0px, 0);
+    transform: translate(0px, 0);
+  }
+}
+
+@-webkit-keyframes shiftFeetFront {
+  0%
+  {
+    background-position: -165px 0;
+  }
+  33.332%
+  {
+    background-position: -165px 0;
+  }
+  33.334%
+  {
+    background-position: -250px 0;
+  }
+  66.665%
+  {
+    background-position: -250px 0;
+  }
+  66.667%
+  {
+    background-position: -335px 0;
+  }
+  99.999%
+  {
+    background-position: -335px 0;
+  }
+  100%
+  {
+    background-position: -250px 0;
+  }
+}
+
+.fired {
+  background-position: -505px 0 !important;
+}
+
+.shoot{
+  animation: shoot 5s linear 0s 1 normal forwards;
+}
+
+@-webkit-keyframes shoot {
+
+  0%
+  {
+    background-position: -590px 0;
+  }
+  49.9997%
+  {
+    background-position: -590px 0;
+  }
+  50%
+  {
+    background-position: -675px 0;
+  }
+  99.999%
+  {
+    background-position: -675px 0;
+  }
+  100%
+  {
+    background-position: -760px 0;
+  }
+}
+.killed {
+  animation: killed 1s linear 0s 1 normal forwards;
+
+  @-webkit-keyframes killed {
+
+    0% {
+      background-position: -760px 0;
+    }
+    49.9998% {
+      background-position: -760px 0;
+    }
+    50% {
+      background-position: -845px 0;
+    }
+    99.999% {
+      background-position: -845px 0;
+    }
+    100% {
+      background-position: -930px 0;
+    }
+  }
+}
+
