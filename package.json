@@ -1,0 +1,38 @@
+{
+  "name": "shooter_exam",
+  "version": "1.0.0",
+  "description": "exam project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inna-Inna/shooter_exam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inna-Inna/shooter_exam/issues"
+  },
+  "homepage": "https://github.com/Inna-Inna/shooter_exam#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "autoprefixer-loader": "^3.1.0",
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
+    "jquery": "^2.1.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
